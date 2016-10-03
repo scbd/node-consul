@@ -158,6 +158,13 @@ describe('Consul', function() {
         ' Lock',
         '  - acquire (sync)',
         '  - release (sync)',
+        ' Query',
+        '  - list (callback)',
+        '  - create (callback)',
+        '  - get (callback)',
+        '  - update (callback)',
+        '  - destroy (callback)',
+        '  - execute (callback)',
         ' Session',
         '  - create (callback)',
         '  - destroy (callback)',
@@ -194,7 +201,7 @@ describe('Consul', function() {
 
     describe('default', function() {
       it('should work', function() {
-        if (GLOBAL.Promise) {
+        if (global.Promise) {
           helper.consul({ promisify: true });
         } else {
           should(function() {
